@@ -7,7 +7,6 @@ VAR
 BEGIN
     start := 0
     end = str.length - 1
-    is_palindrome_helper(str, start, end)
 END
 
 ALGORITHM is_palindrome_helper
@@ -15,12 +14,15 @@ VAR
     str: STRING
     start, end: INTEGER
 BEGIN
-    IF start >= end THEN
+    FOR i FROM 0 TO end  DO
+        IF start[i] >= end[i] THEN
         OUTPUT "The string is a palindrome."
         RETURN
     END IF
+    END_FOR
+    
 
-    IF str[start] <> str[end] THEN
+    IF start[i] <> end[i] THEN
         OUTPUT "The string is not a palindrome."
         RETURN
     END IF
